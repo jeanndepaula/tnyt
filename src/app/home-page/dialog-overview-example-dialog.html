@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>{{data.title}}</h1>
+<div mat-dialog-content>
+  
+  <!-- <h3>Published Date: {{data.published_date | date: 'full' }}</h3> -->
+  <img [src]='data.multimedia[data.multimedia.length - 1]?.url'
+    [alt]='data.multimedia[data.multimedia.length - 1]?.caption'>
+  <p>
+    {{data.abstract}}<br/>
+    <small>{{data.byline}}</small>
+  </p>
+</div>
+<div mat-dialog-actions>
+  <a href='{{data.url}}'>Link</a>
+  &nbsp;
+  <button mat-flat-button (click)="onNoClick()">Close</button>
+</div>
